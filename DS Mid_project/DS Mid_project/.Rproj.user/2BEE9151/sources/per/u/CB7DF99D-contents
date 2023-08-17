@@ -1,0 +1,41 @@
+c
+mydata
+ncol(mydata)
+nrow(mydata)
+str(mydata)
+summary (mydata)
+m <- mydata$fare
+mode(m)
+m1 <- mydata$Gender
+mode(m1)
+m2 <-mydata$age
+mode(m2)
+sd(mydata$age, na.rm = TRUE)
+sd(mydata$fare, na.rm =TRUE)
+mydata$class <- factor(mydata$class, levels =c("First", "Second", "Third"), labels = c(0,1,2))
+mydata <-edit( mydata) 
+mydata$embarked <- factor(mydata$embarked, levels  = c("S","Q","C"), labels = c(0,1,2))
+mydata <- edit(mydata)
+mydata$alone <- factor(mydata$alone, levels =c("TRUE", "FALSE"), labels = c(0,1))
+mydata <-edit( mydata) 
+colSums(is.na(mydata))
+which(is.na(mydata$Gender))
+which(is.na(mydata$age))
+which(is.na(mydata$sibsp))
+which(is.na(mydata$parch))
+which(is.na(mydata$fare))
+which(is.na(mydata$embarked ))
+which(is.na(mydata$class))
+which(is.na(mydata$who))
+which(is.na(mydata$alone))
+which(is.na(mydata$survived))
+remove <- na.omit(mydata)
+remove
+mean(mydata$Gender, na.rm = TRUE)
+mean(mydata$age,na.rm = TRUE)
+mean(mydata$class,na.rm = TRUE)
+median(mydata$Gender,na.rm = TRUE)
+median(mydata$age,na.rm = TRUE)
+mydata$Gender[is.na(mydata$Gender)] <-mean(mydata$Gender,na.rm = TRUE)
+mydata$age [is.na(mydata$age)] <-mean(mydata$age, na.rm = TRUE)
+mydata
